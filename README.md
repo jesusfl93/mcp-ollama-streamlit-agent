@@ -31,22 +31,23 @@ The assistant supports the following built-in tools via MCP server:
 
 
 
+
 ```mermaid
 flowchart TD
-    subgraph "🧠 Streamlit UI"
+    subgraph Streamlit_UI
         A1[User Prompt]
         A2[Display Chat History]
         A3[Streamlit App (app.py)]
     end
 
-    subgraph "📡 MCP Client (client.py)"
+    subgraph MCP_Client_client_py
         B1[Connect to SSE Server]
         B2[Process Query]
         B3[Call Ollama API]
         B4[Handle Tool Calls]
     end
 
-    subgraph "⚙️ MCP Server (server.py)"
+    subgraph MCP_Server_server_py
         C1[Tool: Weather Alerts]
         C2[Tool: Forecast]
         C3[Tool: Math Evaluation]
@@ -54,7 +55,7 @@ flowchart TD
         C5[Tool: Dataset Query]
     end
 
-    subgraph "🧠 Ollama"
+    subgraph Ollama
         D1[qwen3:1.7b Model]
     end
 
@@ -75,6 +76,7 @@ flowchart TD
     C4 --> B2
     C5 --> B2
 ```
+
 
 
 

@@ -29,6 +29,55 @@ The assistant supports the following built-in tools via MCP server:
 
 ---
 
+
+```mermaid
+%%{init: {'theme': 'default'}}%%
+flowchart TD
+    subgraph "🧠 Streamlit UI"
+        A1[User Prompt]
+        A2[Display Chat History]
+        A3[Streamlit App (app.py)]
+    end
+
+    subgraph "📡 MCP Client (client.py)"
+        B1[Connect to SSE Server]
+        B2[Process Query]
+        B3[Call Ollama API]
+        B4[Handle Tool Calls]
+    end
+
+    subgraph "⚙️ MCP Server (server.py)"
+        C1[Tool: Weather Alerts]
+        C2[Tool: Forecast]
+        C3[Tool: Math Evaluation]
+        C4[Tool: Dataset Analysis]
+        C5[Tool: Dataset Query]
+    end
+
+    subgraph "🧠 Ollama"
+        D1[qwen3:1.7b Model]
+    end
+
+    A1 --> A3
+    A3 --> B2
+    A2 --> A3
+    B2 --> B3
+    B3 --> D1
+    D1 --> B4
+    B4 -->|Tool Call| C1
+    B4 -->|Tool Call| C2
+    B4 -->|Tool Call| C3
+    B4 -->|Tool Call| C4
+    B4 -->|Tool Call| C5
+    C1 --> B2
+    C2 --> B2
+    C3 --> B2
+    C4 --> B2
+    C5 --> B2
+```
+
+
+
 ## 🔧 Requirements
 
 Ensure you have the following installed:

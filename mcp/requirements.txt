@@ -1,0 +1,7 @@
+streamlit
+uvicorn
+httpx
+python-dotenv
+pandas
+scikit-learn
+mcp

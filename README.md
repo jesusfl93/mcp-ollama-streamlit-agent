@@ -30,8 +30,8 @@ The assistant supports the following built-in tools via MCP server:
 ---
 
 
+
 ```mermaid
-%%{init: {'theme': 'default'}}%%
 flowchart TD
     subgraph "🧠 Streamlit UI"
         A1[User Prompt]
@@ -75,6 +75,7 @@ flowchart TD
     C4 --> B2
     C5 --> B2
 ```
+
 
 
 
